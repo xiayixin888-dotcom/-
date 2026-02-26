@@ -1,0 +1,18 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
+import ChatPage from './pages/ChatPage';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/chat" replace />} />
+          <Route path="chat" element={<ChatPage />} />
+          <Route path="tasks" element={<ChatPage />} />
+          <Route path="audience" element={<ChatPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
